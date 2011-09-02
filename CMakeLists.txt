@@ -2,6 +2,7 @@ CMAKE_MINIMUM_REQUIRED( VERSION 2.6 )
 
 PROJECT( vtkInteractionDevice )
 
+list(APPEND CMAKE_MODULE_PATH ${vtkInteractionDevice_SOURCE_DIR})
 SET( LIBRARY_OUTPUT_PATH "${vtkInteractionDevice_BINARY_DIR}/lib" )
 
 
@@ -73,6 +74,7 @@ INCLUDE_DIRECTORIES( ${vtkInteractionDevice_BINARY_DIR} )
 # Include vrpn
 #######################################
 
+FIND_PACKAGE(VRPN REQUIRED)
 FIND_PATH(VRPN_INCLUDE_DIR vrpn_Tracker.h)
 FIND_LIBRARY(VRPN_LIBRARY vrpn)
 
